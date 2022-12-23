@@ -1,0 +1,90 @@
+body {
+  margin: 10px;
+  background: #FEFAAE;
+  color: #B58834;
+  font-family: 'Sevillana', serif;
+}
+
+/* card */
+.card {
+  width: 300px;
+  height: 214px;
+  margin: 0 auto;
+  position: relative;
+  perspective: 1400px;
+  left: 0;
+  transition: all 1s;
+}
+
+/* outer flap */
+.top-flap {
+  position: absolute;
+  top: 250px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  box-shadow: 5px 10px 10px rgba(0,0,0,0.25);
+  z-index: 1;
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  transform-origin: 0 0;
+}
+
+.top-flap img {
+  width: 100%;
+}
+
+.top-flap .card-front,
+.top-flap .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.top-flap .card-back {
+  background: #f4f4f4;
+  transform: rotateX(-180deg);
+}
+
+/* open-top-flap card */
+.card.open-top-flap .top-flap {
+  transform: rotateX(180deg);
+}
+
+.card.open-top-flap {
+  top: 0;
+}
+
+/* inner card */
+.bottom-flap {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  box-shadow: 5px 10px 10px rgba(0,0,0,0.25);
+  position: absolute;
+  top: 250px;
+  left: 0;
+  z-index: 0;
+}
+
+.bottom-flap h3 {
+  color: crimson;
+}
+
+.left-bottom-flap,
+.right-bottom-flap {
+  width: 50%;
+}
+
+.left-bottom-flap img {
+  width: 100%;
+}
+
+.right-bottom-flap {
+  text-align: center;
+}
